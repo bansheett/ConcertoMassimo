@@ -9,6 +9,7 @@ Generazione del biglietto in PDF: Utilizzando Apache PDFBox, il sistema genera u
 Interfaccia utente responsive: L’applicazione utilizza HTML, CSS e JavaScript per garantire un’esperienza utente fluida sia su desktop che su dispositivi mobili.
 ### Tecnologie utilizzate
 - Java 21 – Linguaggio di programmazione principale
+- HTML, CSS, Javascript
 - Spring Boot – Framework per la creazione dell’applicazione web
 - Spring Security – Gestione dell’autenticazione e della sicurezza
 - Spring Data JPA – Per l’accesso al database (MySQL)
