@@ -5,30 +5,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aggiungi Canzone</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 50px;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif, 'Arial', sans-serif;
     }
-    form {
-      display: inline-block;
-      text-align: left;
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #D2D2D2;
+      background-image:
+              repeating-linear-gradient(
+                      to right, transparent 0 100px,
+                      #25283b22 100px 101px
+              ),
+              repeating-linear-gradient(
+                      to bottom, transparent 0 100px,
+                      #25283b22 100px 101px
+              );
+    }
+
+    /* Form Container */
+    .form-container {
+      width: 400px;
+      background: white;
+      color: black;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      margin: auto;
+    }
+
+    .form-container h2 {
+      font-size: 22px;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Input Fields */
+    .input-field {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-field input {
+      width: 100%;
+      height: 45px;
+      border-radius: 6px;
+      font-size: 16px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: white;
+      color: black;
+      outline: none;
+    }
+
+    .input-field input[type="file"] {
+      padding: 8px;
+    }
+
+    .input-field label {
+      position: absolute;
+      top: -20px;
+      left: 0;
+      color: #666;
+      font-size: 16px;
+    }
+
+    .input-field input:focus {
+      border: 1px solid #007bff;
+    }
+
+    /* Button */
+    .submit-btn {
+      width: 100%;
+      height: 45px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #007bff;
+      color: white;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      background: #1e7e34;
     }
   </style>
 </head>
 <body>
-<h2>Aggiungi una canzone</h2>
-<form action="/controller/aggiungiArtista" method="post" enctype="multipart/form-data">
-  <label for="artist">Nome Artista:</label>
-  <input type="text" id="artist" name="nome" required><br><br>
+<!-- Form Container -->
+<div class="form-container">
+  <h2>Aggiungi una canzone</h2>
+  <form action="/controller/aggiungiArtista" method="post" enctype="multipart/form-data">
+    <div class="input-field">
+      <label for="artist">Nome Artista:</label>
+      <input type="text" id="artist" name="nome" required>
+    </div>
 
-  <label for="image">Immagine:</label>
-  <input type="file" id="image" name="immagine" accept="image/*" required><br><br>
+    <div class="input-field">
+      <label for="image">Immagine:</label>
+      <input type="file" id="image" name="immagine" accept="image/*" required>
+    </div>
 
-  <label for="songLink">Link Canzone:</label>
-  <input type="text" id="songLink" name="audio_url" required><br><br>
+    <div class="input-field">
+      <label for="songLink">Link Canzone:</label>
+      <input type="text" id="songLink" name="audio_url" required>
+    </div>
 
-  <button type="submit">Aggiungi</button>
-</form>
+    <button type="submit" class="submit-btn">Aggiungi</button>
+  </form>
+</div>
 </body>
 </html>
